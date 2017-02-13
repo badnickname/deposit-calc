@@ -42,8 +42,8 @@ int main()
   float dohod = 0;
 
   if (vklad > 100) a = 1.03; else a = 1.02;
-  if (vklad > 100) a = 1.08; else a = 1.06;
-  if (vklad > 100) a = 1.15; else a = 1.12;
+  if (vklad > 100) b = 1.08; else b = 1.06;
+  if (vklad > 100) c = 1.15; else c = 1.12;
   
   if (srok<=30) dohod = vklad*0.9;
   if (srok>30 && srok<121) dohod = vklad * a;
