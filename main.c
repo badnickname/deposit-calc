@@ -1,18 +1,37 @@
 #include <iostream>
 
+using namespace std;
+
 int getvklad()
 {
   int x;
-  cout << "Enter Vklad: ";
-  cin >> x;
+  int a = 1;
+
+  while (a)
+    {
+      a = 0;
+      cout << "Enter Vklad: ";
+      cin >> x;
+      if (x<10) (a=1,cout<<"Вклад должен быть выше 10");
+      cout << endl;
+    }
   return x;
 }
 
 int getsrok()
 {
   int x;
-  cout << endl << "Enter Srok: ";
-  cin >> x;
+  int a = 1;
+
+  while (a)
+    {
+      a = 0;
+      cout << endl << "Enter Srok: ";
+      cin >> x;
+      if (x<0) (a=1,cout<<"Срок не должен быть меньше 0. ");
+      if (x>365) (a=1,cout<<"Срок должен быть меньше 365");
+      cout << endl;
+    }
   return x;
 }
 
