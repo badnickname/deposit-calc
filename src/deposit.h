@@ -5,6 +5,8 @@
 
 int getVklad();
 int getSrok();
-double countDohod();
+int isVkladCorrect(int);
+int isSrokCorrect(int);
+double countDohod(double, int);
 
 #endif

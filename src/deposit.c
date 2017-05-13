@@ -1,5 +1,15 @@
 #include <stdio.h>
 
+int isVkladCorrect(int value) {
+    if (value<10) return 0;
+    return 1;
+}
+
+int isSrokCorrect(int value) {
+    if (value<0 || value>365) return 0;
+    return 1;
+}
+
 int getVklad() {
     int value;
     int is_loop = 1;
@@ -7,7 +17,7 @@ int getVklad() {
     is_loop = 0;
         printf("Введите вклад: ");
         scanf("%d",&value);
-        if (value<10) (is_loop=1,printf("Минимальная сумма вклада - 10\n"));
+        if (!isVkladCorrect(value)) (is_loop=1,printf("Минимальная сумма вклада - 10\n"));
     }
     return value;
 }
@@ -17,19 +27,16 @@ int getSrok() {
     int is_loop = 1;
     while (is_loop) {
         is_loop = 0;
-        printf("Введите срок: ");
+        printf("Введите срок (от 0 до 365): ");
         scanf("%d",&value);
-        if (value<0) (is_loop=1,printf("Срок должен быть больше 0\n"));
-        if (value>365) (is_loop=1,printf("Срок должен быть меньше 365\n"));
+        if (!isSrokCorrect(value)) (is_loop=1,printf("Введен некорректный срок\n"));
     }
     return value;
 }
 
-double countDohod() {
+double countDohod(double vklad, int srok) {
+    if (!isSrokCorrect(srok) || !isVkladCorrect(vklad)) return 0;
     double a,b,c;
-
-    int vklad = getVklad();
-    int srok = getSrok();
     double dohod = 0;
 
     if (vklad > 100) {
