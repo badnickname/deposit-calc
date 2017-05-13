@@ -1,10 +1,10 @@
 language: c
 
 install: 
-  - make
+  - make test
 
 script:
-  - bin/deposit-calc
+  - bin/deposit-calc-test
   
 after_success:
   - make clean
