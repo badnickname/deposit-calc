@@ -4,8 +4,8 @@ install:
   - make
 
 script:
-  - bin/deposit-calc-test
-
+  - bin/deposit-calc
+  
 after_success:
   - make clean
 
